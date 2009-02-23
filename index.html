@@ -7,7 +7,9 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $("#no a").click(function(){
-        $("#right").slideUp("normal", function() {$("#wrong").fadeIn();});
+        $("#no").fadeOut("normal", function() {
+          $("#right").slideUp("normal", function() {$("#wrong").fadeIn();});
+        });
         return false;
       });
       $("#yes a").click(function(){
