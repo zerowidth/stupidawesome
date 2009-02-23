@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+  <title>stupid awesome</title>
+  <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#no a").click(function(){
+        $("#right").slideUp("normal", function() {$("#wrong").fadeIn();});
+        return false;
+      });
+      $("#yes a").click(function(){
+        $("#wrong").fadeOut("normal");
+        $("#no").fadeOut("normal", function() {
+          $("#right").fadeIn();
+        });
+        return false;
+      });
+    });
+  </script>
+  <style type="text/css">
+    body {
+      text-align: center;
+      font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif;
+      font-size: 3em;
+    }
+    a {
+      color: #069;
+      text-decoration: none;
+    }
+    .question {
+      color: #333;
+    }
+    .link {
+      font-size: 0.66em;
+    }
+    #wrong {
+      color: #C00;
+      font-weight: bold;
+    }
+    #right {
+      color: #060;
+      font-weight: bold;
+      font-style: italic;
+    }
+    #right .small {
+      color: #000;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 0.5em;
+    }
+
+  </style>
+</head>
+
+<body>
+  <p class="question">how awesome are you?</p>
+  <p id="no" class="link">
+    <span class="main_question">&raquo; <a href="#">not very</a> &laquo;</span>
+  </p>
+  <p id="wrong" style="display:none">wrong</p>
+
+  <p id="yes" class="link">
+    <span class="main_question">&raquo; <a href="#">stupid awesome</a> &laquo;</span>
+  </p>
+  <div id="right" style="display:none">
+    <p>fuck yeah!
+    <div class="small">now go be awesome!!!</div>
+    </p>
+  </div>
+</body>
+
+</html>
+
